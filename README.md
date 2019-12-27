@@ -1,92 +1,127 @@
-## Desafio da semana #2
-Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! 😄
+# Desafio da semana #3
 
-// Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-function ret2(x, y) {
-  return x+y;
-  }
+## //Declararr uma variável qualquer, que receba um objeto vazio.
+var qqer = {};
 
-// Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-const varFunc = ret2(2, 5) + 5
+## Declarar uma variável `pessoa`, que receba suas informações pessoais.
+## As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
+## `nome` - String
+## `sobrenome` - String
+## `idade` - Number
+## `altura` - Number
+## `peso` - Number
+## `andando` - Boolean
+## `camihouQuantosMetros` - Number - recebe "zero" por padrão.
+const pessoa = {
+  nome: "Alex",
+  sobrenome: "Silva",
+  sexo: "masculino",
+  idade: 24,
+  ltura: 1.78,
+  peso: 90.35,
+  andando: false,
+  camihouQuantosMetros: 0
+};
 
-// Qual o valor atualizado dessa variável?
-13
+## Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método
+## deve alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que for chamado. 
+pessoa.aniversario = function() {
+  pessoa.idade++;
+};
 
-// Declare uma nova variável, sem valor.
-var qqer;
+## Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguntes características:
+## - Esse método deve receber por parâmetro um valor que representará a quantidade de metros camihados;
+## - Ele deve alterar o valor da propriedade `caminhouQuantosMetros`, somando ao valor dessa propriedade a quantidade
+## de metros caminhados, e modificar a propriedade `andando` para boolean verdadeiro.
+pessoa.andar = function(x) {
+  pessoa.andando = true;
+  camihouQuantosMetros += x;
+  return `${pessoa.nome} caminhou ${x} metros`; 
+};
 
-/*
-Crie uma função que adicione um valor à variável criada acima, e retorne a string:
-    O valor da variável agora é VALOR.
-Onde VALOR é o novo valor da variável.
-*/
-function fraseNum(x) {
-  qqer = x;
-  return (y = `O valor da variavel é ${x}`);
+## Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor da propriedade `andando` para falso.
+pessoa.parar = function() {
+  pessoa.andando = false;
+  return `${pessoa.nome} parou de camihar`
+};
+
+## Crie um método chamado `nomeCompleto`, que retorne a frase: 
+## "Olá! meu nome é `NOME` `SOBRENOME`!.
+pessoa.nomeCompleto = function() {
+  return `Olá! meu nome é ${pessoa.nome} ${pessoa.sobrenome}!`
 }
 
-// Invoque a função criada acima.
-console.log(fraseNum(5));
-
-// Qual o retorno da função? (Use comentários de bloco).
-/*
-O retorno da variável é o valor escolhido sempre pelo X.
-/*
-
-Crie uma função com as seguintes características:
-1. A função deve receber 3 argumentos;
-2. Se qualquer um dos três argumentos não estiverem preenchidos, a função deve retornar a string:
-    Preencha todos os valores corretamente!
-3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
-*/
-function multi3(a, b, c) {
-  if (!a || !b || !c) {
-    console.log("Preencha todos os valores corretamente");
-    return;
-  } else {
-    return (xis = a * b * c);
-  }
+## Crie um método chamado `mostrarIdade`, que retorne a frase:
+## - "Olá, eu tenho [IDADE] anos!"
+pessoa.mostrarIdade = function() {
+  return `Olá, eu tenho ${pessoa.idade} anos!`
 }
 
-
-// Invoque a função criada acima, passando só dois números como argumento.
-console.log(multi3(1, 3));
-
-// Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-"Preencha todos os valores corretamente"
-"undefined"
-
-// Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-multi3(1,2,3)
-
-// Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-//6
-
-/*
-Crie uma função com as seguintes características:
-1. A função deve receber 3 argumentos.
-2. Se somente um argumento for passado, retorne o valor do argumento.
-3. Se dois argumentos forem passados, retorne a soma dos dois argumentos.
-4. Se todos os argumentos forem passados, retorne a soma do primeiro com o segundo, e o resultado, dividido pelo terceiro.
-5. Se nenhum argumento for passado, retorne o valor booleano `false`.
-6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
-*/
-function recebe3(a, b, c) {
-  if (a && !b && !c) {
-    return a;
-  } else if (a && b && !c) {
-    return a + b;
-  } else if (a && b && c) {
-    return (a + b) / c;
-  } else if (!a && !b && !c) {
-    return false;
-  } else {
-    return null;
-  }
+## Crie um método chamado `mostrarPeso`, que retorne a frase:
+## - "Eu peso [PESO]Kg."
+pessoa.mostrarPeso = function() {
+  return `Eu Peso ${pessoa.peso}Kg.`
 }
 
-// Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-recebe3(1); //1
-recebe3(1,2); //3
-recebe3(1,2,3)//1,5
-recebe()//false
+## Crie um método chamado `mostrarAltura` que retorne a frase:
+## - "Minha altura é [ALTURA]m."
+pesoa.mostrarAltura = function () {
+  return `Minha altura é ${pessoa.altura}m.`
+}
+
+## Agora vamos brincar um pouco com o objeto criado:
+## Qual o nome completo da pessoa? (Use a instrução para responder e comentários
+## inline ao lado da instrução para mostrar qual foi a resposta retornada)
+pessoa.nomeCompleto() // "Olá meu nome é Alex Silva!"
+ 
+## Qual o peso da pessoa? (Use a instrução para responder e comentários
+## inline ao lado da instrução para mostrar qual foi a resposta retornada)
+pessoa.mostrarPeso() // "Eu peso 90.35Kg."
+
+## Qual a altura da pessoa? (Use a instrução para responder e comentários
+## inline ao lado da instrução para mostrar qual foi a resposta retornada)
+pessoa.mostrarAtura() // "Minha altura é 1.78m"
+
+## Faça a `pessoa` fazer 3 aniversários.
+pessoa.aniversario() // 26
+pessoa.aniversario() // 27
+pessoa.aniversario() // 28
+
+## Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
+## comentários inline ao lado da instrução para mostrar qual foi a resposta
+## retornada)
+pessoa.idade // 28
+
+## Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
+## com metragens diferentes passadas por parâmetro.
+pessoa.andar(2)
+pessoa.andar(3)
+pessoa.andar(4)
+
+## A pessoa ainda está andando? (Use a instrução para responder e comentários
+## inline ao lado da instrução para mostrar qual foi a resposta retornada)
+pessoa.andando // true
+
+## Se a pessoa ainda está andando, faça-a parar.
+pessoa.parar() // "Alex parou de andar".
+
+## E agora: a pessoa ainda está andando? (Use uma instrução para responder e
+## comentários inline ao lado da instrução para mostrar a resposta retornada)
+pessoa.andando // false
+
+## Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
+## inline ao lado da instrução para mostrar a resposta retornada)
+pessoa.caminhouQuantosMetros() //9
+
+## Agora vamos deixar a brincadeira um pouco mais divertida! :D
+## Crie um método para o objeto `pessoa` chamado `apresentacao`. Esse método deve
+## retornar a string:
+## - "Olá, eu sou o [NOME COMPLETO], tenho [IDADE] anos, [ALTURA], meu peso é [PESO] e, só hoje, eu já caminhei [CAMINHOU QUANTOS METROS] metros!"
+pessoa.apresentacao = function() {
+  apresentacaoSexo = pessoa.sexo == "masculino" ? "Olá, eu sou o" : "Olá, eu sou o";
+  apresentacaoIdade = pessoa.idade == 1 ? "ano" : "anos";
+  apresentacaoMetros = pessoa.caminhouQuantosMetros == 1 ? "metro" : "metros";
+  return `${apresentacaoSexo} ${pessoa.nome}, eu tenho ${pessoa.idade} ${apresentacaoIdade}, e hoje caminhei ${pessoa.caminhouQuantosMetros} ${apresentacaoMetros}`;
+};
+ 
+ 
