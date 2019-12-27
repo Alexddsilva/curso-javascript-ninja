@@ -1,127 +1,176 @@
-# Desafio da semana #3
+# Desafio da semana #4
 
-## //Declararr uma variável qualquer, que receba um objeto vazio.
-var qqer = {};
-
-## Declarar uma variável `pessoa`, que receba suas informações pessoais.
-## As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
-## `nome` - String
-## `sobrenome` - String
-## `idade` - Number
-## `altura` - Number
-## `peso` - Number
-## `andando` - Boolean
-## `camihouQuantosMetros` - Number - recebe "zero" por padrão.
-const pessoa = {
-  nome: "Alex",
-  sobrenome: "Silva",
-  sexo: "masculino",
-  idade: 24,
-  ltura: 1.78,
-  peso: 90.35,
-  andando: false,
-  camihouQuantosMetros: 0
-};
-
-## Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método
-## deve alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que for chamado. 
-pessoa.aniversario = function() {
-  pessoa.idade++;
-};
-
-## Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguntes características:
-## - Esse método deve receber por parâmetro um valor que representará a quantidade de metros camihados;
-## - Ele deve alterar o valor da propriedade `caminhouQuantosMetros`, somando ao valor dessa propriedade a quantidade
-## de metros caminhados, e modificar a propriedade `andando` para boolean verdadeiro.
-pessoa.andar = function(x) {
-  pessoa.andando = true;
-  camihouQuantosMetros += x;
-  return `${pessoa.nome} caminhou ${x} metros`; 
-};
-
-## Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor da propriedade `andando` para falso.
-pessoa.parar = function() {
-  pessoa.andando = false;
-  return `${pessoa.nome} parou de camihar`
-};
-
-## Crie um método chamado `nomeCompleto`, que retorne a frase: 
-## "Olá! meu nome é `NOME` `SOBRENOME`!.
-pessoa.nomeCompleto = function() {
-  return `Olá! meu nome é ${pessoa.nome} ${pessoa.sobrenome}!`
+```js
+/*
+Declare uma variável chamada `isTruthy`, e atribua a ela uma função que recebe
+um único parâmetro como argumento. Essa função deve retornar `true` se o
+equivalente booleano para o valor passado no argumento for `true`, ou `false`
+para o contrário.
+*/
+var isTruthy = funtion (x){
+  return x ? true : false
 }
 
-## Crie um método chamado `mostrarIdade`, que retorne a frase:
-## - "Olá, eu tenho [IDADE] anos!"
-pessoa.mostrarIdade = function() {
-  return `Olá, eu tenho ${pessoa.idade} anos!`
+// Invoque a função criada acima, passando todos os tipos de valores `falsy`.
+isTruthy(0)
+isTruthy('')
+isTruthy(null)
+isTruthy(undefined)
+
+/*
+Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
+*/
+isTruthy(1)
+isTruthy('1')
+isTruthy(0+1)
+isTruthy(null + 1)
+isTruthy(true)
+isTruthy(!false)
+isTruthy(!!true)
+isTruthy('Alex')
+isTruthy(!null)
+
+
+
+/*
+Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
+seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
+- `marca` - String
+- `modelo` - String
+- `placa` - String
+- `ano` - Number
+- `cor` - String
+- `quantasPortas` - Number
+- `assentos` - Number - cinco por padrão
+- `quantidadePessoas` - Number - zero por padrão
+*/
+const carro = {
+    marca: 'GM',
+    modelo: '2.0',
+    placa: 'ASD1234',
+    ano: 2010,
+    cor: 'vermelho',
+    numPortas: 4,
+    assentos: 5,
+    quantPessoas: 0
 }
 
-## Crie um método chamado `mostrarPeso`, que retorne a frase:
-## - "Eu peso [PESO]Kg."
-pessoa.mostrarPeso = function() {
-  return `Eu Peso ${pessoa.peso}Kg.`
+/*
+Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
+passado por parâmetro.
+*/
+mudaCor = function (novaCor){
+  carro.cor = novaCor;
 }
 
-## Crie um método chamado `mostrarAltura` que retorne a frase:
-## - "Minha altura é [ALTURA]m."
-pesoa.mostrarAltura = function () {
-  return `Minha altura é ${pessoa.altura}m.`
+/*
+Crie um método chamado `obterCor`, que retorne a cor do carro.
+*/
+obterCor = function(){
+  return carro.cor;
 }
 
-## Agora vamos brincar um pouco com o objeto criado:
-## Qual o nome completo da pessoa? (Use a instrução para responder e comentários
-## inline ao lado da instrução para mostrar qual foi a resposta retornada)
-pessoa.nomeCompleto() // "Olá meu nome é Alex Silva!"
- 
-## Qual o peso da pessoa? (Use a instrução para responder e comentários
-## inline ao lado da instrução para mostrar qual foi a resposta retornada)
-pessoa.mostrarPeso() // "Eu peso 90.35Kg."
+/*
+Crie um método chamado `obterModelo` que retorne o modelo do carro.
+*/
+obterModelo = function(){
+  return carro.modelo;
+}
 
-## Qual a altura da pessoa? (Use a instrução para responder e comentários
-## inline ao lado da instrução para mostrar qual foi a resposta retornada)
-pessoa.mostrarAtura() // "Minha altura é 1.78m"
+/*
+Crie um método chamado `obterMarca` que retorne a marca do carro.
+*/
+obterMarca = function(){
+  return carro.marca;
+}
 
-## Faça a `pessoa` fazer 3 aniversários.
-pessoa.aniversario() // 26
-pessoa.aniversario() // 27
-pessoa.aniversario() // 28
+/*
+Crie um método chamado `obterMarcaModelo`, que retorne:
+"Esse carro é um [MARCA] [MODELO]"
+Para retornar os valores de marca e modelo, utilize os métodos criados.
+*/
+obterMarcaModelo = function (){
+  return `Esse carro é um ${carro.marca} ${carro.modelo}`
+}
 
-## Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
-## comentários inline ao lado da instrução para mostrar qual foi a resposta
-## retornada)
-pessoa.idade // 28
+/*
 
-## Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
-## com metragens diferentes passadas por parâmetro.
-pessoa.andar(2)
-pessoa.andar(3)
-pessoa.andar(4)
+Crie um método que irá adicionar pessoas no carro. Esse método terá as
+seguintes características:
+- Ele deverá receber por parâmetro o número de pessoas entrarão no carro. Esse
+número não precisa encher o carro, você poderá acrescentar as pessoas aos
+poucos.
+- O método deve retornar a frase: "Já temos [X] pessoas no carro!"
+- Se o carro já estiver cheio, com todos os assentos já preenchidos, o método
+deve retornar a frase: "O carro já está lotado!"
+- Se ainda houverem lugares no carro, mas a quantidade de pessoas passadas por
+parâmetro for ultrapassar o limite de assentos do carro, então você deve
+mostrar quantos assentos ainda podem ser ocupados, com a frase:
+"Só cabem mais [QUANTIDADE_DE_PESSOAS_QUE_CABEM] pessoas!"
+- Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
+citado acima, no lugar de "pessoas".
+*/
+carro.adicionarPessoas = function (Pessoas) {
+    if (carro.quantPessoas === 5) {
+        return 'O carro está lotado.'
+    }
+    if (carro.quantPessoas < 5) {
+        if (carro.quantPessoas + Pessoas <= 5) {
+            carro.quantPessoas += Pessoas;
+            return `Já temos ${carro.quantPessoas} Pessoas`
+        } else {
+            return `Não é possivel adicionar ${Pessoas} ${5 - carro.quantPessoas > 1 ? 'pessoas' : 'pessoa'}, temos apenas ${5 - carro.quantPessoas} ${5 - carro.quantPessoas > 1 ? 'vagas' : 'vaga'}`
+        }
+    } else {
+        return `Não é possivel adicionar ${Pessoas} ${5 - carro.quantPessoas > 1 ? 'pessoas' : 'pessoa'}, temos apenas ${5 - carro.quantPessoas} ${5 - carro.quantPessoas > 1 ? 'vagas' : 'vaga'}`
+    }
+}
 
-## A pessoa ainda está andando? (Use a instrução para responder e comentários
-## inline ao lado da instrução para mostrar qual foi a resposta retornada)
-pessoa.andando // true
+/*
+Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
+utilize sempre o formato de invocação do método (ou chamada da propriedade),
+adicionando comentários _inline_ ao lado com o valor retornado, se o método
+retornar algum valor.
 
-## Se a pessoa ainda está andando, faça-a parar.
-pessoa.parar() // "Alex parou de andar".
+Qual a cor atual do carro?
+*/
+carro.cor // 'vermelho'
 
-## E agora: a pessoa ainda está andando? (Use uma instrução para responder e
-## comentários inline ao lado da instrução para mostrar a resposta retornada)
-pessoa.andando // false
+// Mude a cor do carro para vermelho.
+carro.mudarCor(vermelho)
 
-## Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
-## inline ao lado da instrução para mostrar a resposta retornada)
-pessoa.caminhouQuantosMetros() //9
+// E agora, qual a cor do carro?
+carro.cor // 'vermelho'
 
-## Agora vamos deixar a brincadeira um pouco mais divertida! :D
-## Crie um método para o objeto `pessoa` chamado `apresentacao`. Esse método deve
-## retornar a string:
-## - "Olá, eu sou o [NOME COMPLETO], tenho [IDADE] anos, [ALTURA], meu peso é [PESO] e, só hoje, eu já caminhei [CAMINHOU QUANTOS METROS] metros!"
-pessoa.apresentacao = function() {
-  apresentacaoSexo = pessoa.sexo == "masculino" ? "Olá, eu sou o" : "Olá, eu sou o";
-  apresentacaoIdade = pessoa.idade == 1 ? "ano" : "anos";
-  apresentacaoMetros = pessoa.caminhouQuantosMetros == 1 ? "metro" : "metros";
-  return `${apresentacaoSexo} ${pessoa.nome}, eu tenho ${pessoa.idade} ${apresentacaoIdade}, e hoje caminhei ${pessoa.caminhouQuantosMetros} ${apresentacaoMetros}`
-};
- 
- 
+// Mude a cor do carro para verde musgo.
+carro.mudarCor('verde musgo')
+
+// E agora, qual a cor do carro?
+carro.cor // 'verde musgo'
+
+// Qual a marca e modelo do carro?
+carro.obterMarcaModelo // 'Esse é um GM 2.0'
+
+// Adicione 2 pessoas no carro.
+carro.adicionarPessoas(2) // 'Já temos 2 Pessoas'
+
+// Adicione mais 4 pessoas no carro.
+carro.adicionarPessoas(4) // 'Não é possível adicionar 4 pessoas, temos apenas 3 vagas'
+
+// Faça o carro encher.
+carro.adicionarPessoas(3) // 'Já temos 5 pessoas'
+
+// Tire 4 pessoas do carro.
+carro.removerpessoas = function (x){
+  if (x <= carro.quantPessoas){
+    carro.quantPessoas -= x;
+    return `Sairam ${x} ${x > 1 ? 'pessoas':'pessoa'} do carro`
+   }
+}
+
+// Adicione 10 pessoas no carro.
+carro.adicionarPessoas(10) // 'Não é possível adicionar 10 pessoas, temos apenas 9 vagas'
+
+// Quantas pessoas temos no carro?
+carro.quantPessoas // 1
+```
