@@ -1,44 +1,92 @@
-# curso-javascript-ninja
-coisas de ninja
+##Desafio da semana #2
+Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! 😄
 
-// Declarar uma variável chamada `myvar`, sem valor.
-var myvar;
+// Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
+function ret2(x, y) {
+  return x+y;
+  }
 
-// Após declarada, atribua o valor 10 à variável `myvar`.
-myvar = 10;
+// Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
+const varFunc = ret2(2, 5) + 5
 
-// Declare uma nova variável chamada `soma`, e adicione uma instrução somando os valores 15 e 8.
-let soma = 15+8;
+// Qual o valor atualizado dessa variável?
+13
 
-// Atribua à variável `soma` todo o valor dela, somando 1, usando o operador de soma abreviado.
-soma += 1;
+// Declare uma nova variável, sem valor.
+var qqer;
 
-// Atribua à variável `soma` todo o valor dela, multiplicando por 3, usando o operador de multiplicação abreviado.
-soma *= 3;
+/*
+Crie uma função que adicione um valor à variável criada acima, e retorne a string:
+    O valor da variável agora é VALOR.
+Onde VALOR é o novo valor da variável.
+*/
+function fraseNum(x) {
+  qqer = x;
+  return (y = `O valor da variavel é ${x}`);
+}
 
-// Qual é o valor da variável `soma` até aqui?
-72
+// Invoque a função criada acima.
+console.log(fraseNum(5));
 
-// Declare uma variável chamada `souninja`, atribuindo à ela o valor booleano que representa `verdadeiro`.
-let souninja = true;
+// Qual o retorno da função? (Use comentários de bloco).
+/*
+O retorno da variável é o valor escolhido sempre pelo X.
+/*
 
-// Declare uma variável chamada `comida` que recebe um array com os valores 'arroz', 'feijão' e 'ovo'.
-let comida = ['arroz', 'feijao', 'ovo'];
+Crie uma função com as seguintes características:
+1. A função deve receber 3 argumentos;
+2. Se qualquer um dos três argumentos não estiverem preenchidos, a função deve retornar a string:
+    Preencha todos os valores corretamente!
+3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
+*/
+function multi3(a, b, c) {
+  if (!a || !b || !c) {
+    console.log("Preencha todos os valores corretamente");
+    return;
+  } else {
+    return (xis = a * b * c);
+  }
+}
 
-// Digite a instrução que imprime o valor de 'feijao', que está na variável `comida`.
-comida[1];
 
-// Digite o código que verifica se a variável `soma' é igual a variável `myvar` (testando também o tipo).
-soma === myvar;
+// Invoque a função criada acima, passando só dois números como argumento.
+console.log(multi3(1, 3));
 
-// Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
-myvar <= soma;
+// Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
+"Preencha todos os valores corretamente"
+"undefined"
 
-// Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
-function divisao (x , y) {
- let res = x/y;
- return res;
- };
- 
-// Invoque a função criada acima, passando os parâmetros 10 e 2.
-divisao(10,2);
+// Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
+multi3(1,2,3)
+
+// Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
+//6
+
+/*
+Crie uma função com as seguintes características:
+1. A função deve receber 3 argumentos.
+2. Se somente um argumento for passado, retorne o valor do argumento.
+3. Se dois argumentos forem passados, retorne a soma dos dois argumentos.
+4. Se todos os argumentos forem passados, retorne a soma do primeiro com o segundo, e o resultado, dividido pelo terceiro.
+5. Se nenhum argumento for passado, retorne o valor booleano `false`.
+6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
+*/
+function recebe3(a, b, c) {
+  if (a && !b && !c) {
+    return a;
+  } else if (a && b && !c) {
+    return a + b;
+  } else if (a && b && c) {
+    return (a + b) / c;
+  } else if (!a && !b && !c) {
+    return false;
+  } else {
+    return null;
+  }
+}
+
+// Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
+recebe3(1); //1
+recebe3(1,2); //3
+recebe3(1,2,3)//1,5
+recebe()//false
