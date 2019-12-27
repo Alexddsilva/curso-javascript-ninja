@@ -121,7 +121,7 @@ pessoa.apresentacao = function() {
   apresentacaoSexo = pessoa.sexo == "masculino" ? "Olá, eu sou o" : "Olá, eu sou o";
   apresentacaoIdade = pessoa.idade == 1 ? "ano" : "anos";
   apresentacaoMetros = pessoa.caminhouQuantosMetros == 1 ? "metro" : "metros";
-  return `${apresentacaoSexo} ${pessoa.nome}, eu tenho ${pessoa.idade} ${apresentacaoIdade}, e hoje caminhei ${pessoa.caminhouQuantosMetros} ${apresentacaoMetros}`;
+  return `${apresentacaoSexo} ${pessoa.nome}, eu tenho ${pessoa.idade} ${apresentacaoIdade}, e hoje caminhei ${pessoa.caminhouQuantosMetros} ${apresentacaoMetros}`
 };
  
  
