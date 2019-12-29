@@ -91,25 +91,29 @@ os livros.
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+book();
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+
+var livros = Object.keys(book());
+var livro1 = livros[0];
+console.log(livro1);
+console.log(`O livro ${livro1} tem ${book().prop1.quantidadePaginas} paginas`);
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+// console.log(`O autor do livro ${livro1} é ${book().prop1.autor}`)
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+// console.log(`O livro ${livro1} foi publicado pela editora ${book().prop1.editora}`)
