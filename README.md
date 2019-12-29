@@ -1,119 +1,66 @@
-# Challenge-05
+/*
+Vamos falar um pouco sobre "Futebol". Escolha um campeonato estadual qualquer
+para começar o desafio.
+Declare uma variável chamada `championship` que receberá o nome do campeonato,
+e imprima o nome desse campeonato no console.
+*/
+// ?
 
 /*
-Crie uma variável qualquer, que receba um array com alguns valores aleatórios
-- ao menos 5 - (fica por sua conta os valores do array).
+Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
+Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
+estar na ordem em que eles aparecem na tabela no momento da solução desse
+desafio.
 */
-const arr = [1, 21, 15, 9, 2]
+// ?
+
+console.log( 'Times que estão participando do campeonato:', teams );
 
 /*
-Crie uma função que receba um array como parâmetro, e retorne esse array.
+Crie uma função chamada `showTeamPosition` com as seguintes características:
+    - A função deve receber um número por parâmetro;
+    - A função deve retornar a frase:
+    "O time que está em [POSIÇÃO]º lugar é o [NOME DO TIME].";
+    - Onde [POSIÇÃO] é o valor passado por parâmetro e [NOME DO TIME] é o time
+    que está nessa posição no array criado acima com os nomes dos times.
+    --------------
+    Dica: lembre-se que arrays começam no índice zero, então a posição passada
+    deve ser sempre um número a mais que o índice do array ;)
+    --------------
+    - A função só deve retornar a frase acima somente se o time estiver entre
+    os 5 primeiros.
+    - Se não houver time para a posição passada, deve retornar a mensagem:
+    "Não temos a informação do time que está nessa posição."
 */
-var myFunc = function(arg){
-  return arg;
-}
+// ?
 
 /*
-Imprima o segundo índice do array retornado pela função criada acima.
+Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
+função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-myfunc()[1]
+// ?
 
 /*
-Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
-segundo, um número. A função deve retornar o valor de um índice do array que foi passado
-no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
-segundo parâmetro.
+Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
+repetição "while".
 */
-var myFuncReturnParam = function (first, second) {
-  return first[second];
-}
+// ?
 
 /*
-Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
+Crie uma função chamada `convertToHex`, com as seguintes características:
+    - A função recebe uma cor por parâmetro, do tipo string. Exemplo: "red";
+    - Escolha 5 cores que serão convertidas do nome da cor para o seu
+    equivalente hexadecimal (pode ser qualquer tom);
+    - Usando a estrutura switch, verifique se a cor passada por parâmetro é
+    algum hexa escolhido. Se for, retorne a frase:
+    "O hexadecimal para a cor [COR] é [HEXADECIMAL].";
+    - Se a cor passada por parâmetro não estiver entre as selecionadas, mostre
+    a frase:
+    "Não temos o equivalente hexadecimal para [COR]."
 */
-const arrDif = [1, '1', true, null, undefined];
+// ?
 
 /*
-Invoque a função criada acima, fazendo-a retornar todos os valores do último
-array criado.
+Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// 
-myFuncReturnParam(arrDif, 0)
-myFuncReturnParam(arrDif, 1)
-myFuncReturnParam(arrDif, 2)
-myFuncReturnParam(arrDif, 3)
-myFuncReturnParam(arrDif, 4)
-
-/*
-Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
-livro. Dentro dessa função, declare uma variável que recebe um objeto com as
-seguintes características:
-- esse objeto irá receber 3 propriedades, que serão nomes de livros;
-- cada uma dessas propriedades será um novo objeto, que terá outras 3
-propriedades:
-    - `quantidadePaginas` - Number (quantidade de páginas)
-    - `autor` - String
-    - `editora` - String
-- A função deve retornar o objeto referente ao livro passado por parâmetro.
-- Se o parâmetro não for passado, a função deve retornar o objeto com todos
-os livros.
-*/
-// const book = function (livro) {
-    var colecao = {
-        prop1: {
-            quantidadePaginas: 25,
-            autor: 'Emersan',
-            editora: 'beFree'
-        },
-        prop2: {
-            quantidadePaginas: 35,
-            autor: 'Nasreme',
-            editora: 'Freebe'
-        },
-        prop3: {
-            quantidadePaginas: 45,
-            autor: 'Sanemer',
-            editora: 'beFF'
-        }
-    }
-    switch (livro) {
-        case 1:
-            return colecao.prop1;
-        case 2:
-            return colecao.prop2;
-        case 3:
-            return colecao.prop3;
-        default:
-            return colecao;
-    }
-}
-
-/*
-Usando a função criada acima, imprima o objeto com todos os livros.
-*/
-book();
-
-/*
-Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
-usando a frase:
-"O livro [NOME_DO_LIVRO] tem [X] páginas!"
-*/
-
-var livros = Object.keys(book());
-var livro1 = livros[0];
-console.log(livro1);
-console.log(`O livro ${livro1} tem ${book().prop1.quantidadePaginas} paginas`);
-
-/*
-Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
-a frase:
-"O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
-*/
-// console.log(`O autor do livro ${livro1} é ${book().prop1.autor}`)
-
-/*
-Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
-a frase:
-"O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
-*/
-// console.log(`O livro ${livro1} foi publicado pela editora ${book().prop1.editora}`)
+// ?
