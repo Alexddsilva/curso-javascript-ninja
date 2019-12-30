@@ -66,8 +66,7 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     - Se a cor passada por parâmetro não estiver entre as selecionadas, mostre
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
-*/
-// var convertToHex = function (cor) {
+*/ var convertToHex = function (cor) {
     var hexa;
     switch (cor) {
         case 'red':
@@ -109,7 +108,7 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// console.log(convertToHex('red'))
+console.log(convertToHex('red'))
 console.log(convertToHex('blue'))
 console.log(convertToHex('green'))
 console.log(convertToHex('white'))
