@@ -33,7 +33,15 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-// ?
+// var showTeamPosition = function (pos) {
+    if (pos <= 5) {
+        return `O time que está em ${pos}º é o ${teams[pos - 1]}`
+    }
+    if (pos > 5 || pos < 1) {
+        return `Não temos informações sobre a posição escolhida`
+    }
+}
+
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
@@ -59,9 +67,54 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-// ?
+// var convertToHex = function (cor) {
+    var hexa;
+    switch (cor) {
+        case 'red':
+            hexa = '#FF0000'
+            break;
+        case 'blue':
+            hexa = '#0000FF'
+            break;
+        case 'green':
+            hexa = '#00FF00'
+            break;
+        case 'white':
+            hexa = '#FFFFFF'
+            break;
+        case 'black':
+            hexa = '#000000'
+            break;
+        case 'azure':
+            hexa = '#F0FFFF'
+            break;
+        case 'cyan':
+            hexa = '#00FFFF'
+            break;
+        case 'purple':
+            hexa = '#A020F0'
+            break;
+        case 'gold':
+            hexa = '#FFD700'
+            break;
+        default:
+            if (hexa === undefined) {
+                return `Você não passou uma cor para converter.`
+            }
+            return `Não temos o equivalente a hexadecimal para ${cor}.`
+    }
+    return `O hexadecimal para a cor ${cor} é ${hexa}.`
+}
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+// console.log(convertToHex('red'))
+console.log(convertToHex('blue'))
+console.log(convertToHex('green'))
+console.log(convertToHex('white'))
+console.log(convertToHex('black'))
+console.log(convertToHex('azure'))
+console.log(convertToHex('purple'))
+console.log(convertToHex('golden'))
+
