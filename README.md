@@ -1,4 +1,4 @@
-# Challenge-05
+# Challenge-06
 /*
 Vamos falar um pouco sobre "Futebol". Escolha um campeonato estadual qualquer
 para começar o desafio.
